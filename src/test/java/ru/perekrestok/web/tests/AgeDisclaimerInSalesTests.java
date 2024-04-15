@@ -19,7 +19,7 @@ import static io.qameta.allure.Allure.step;
 @Epic("Perekrestok web")
 @Story("Попап подтверждения возраста")
 @Feature("Прохождение попапа подтверждения возраста")
-@Tag("smoke")
+@Tag("smokeWeb")
 public class AgeDisclaimerInSalesTests extends BaseTest {
     private final AgeDisclaimerPopup ageDisclaimerPopup = new AgeDisclaimerPopup();
     private final AlcoholPage alcoholPage = new AlcoholPage();

@@ -3,7 +3,7 @@ package ru.perekrestok.web.config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:config/${env}.properties"
+        "classpath:web/config/${env}.properties"
 })
 public interface DriverConfig extends Config {
     @Key("browser.name")

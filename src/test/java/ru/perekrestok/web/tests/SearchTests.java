@@ -20,7 +20,7 @@ import static java.lang.String.format;
 @Epic("Perekrestok web")
 @Story("Поиск")
 @Feature("Поиск товара")
-@Tag("smoke")
+@Tag("smokeWeb")
 public class SearchTests extends BaseTest {
     private final MainPage mainPage = new MainPage();
     private final Header header = new Header();

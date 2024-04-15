@@ -60,7 +60,7 @@ tasks.withType(Test) {
 }
 
 task withTags(type: Test) {
-    String tags = System.getProperty("tags", "smoke")
+    String tags = System.getProperty("tags", "smokeWeb")
     useJUnitPlatform {
         systemProperties(System.getProperties())
         includeTags tags.split(',')

@@ -1,0 +1,2 @@
+Instruction to upload app to browserstack - https://www.browserstack.com/app-live/rest-api
+Browserstack will automatically remove the app after 30 days after uploading
