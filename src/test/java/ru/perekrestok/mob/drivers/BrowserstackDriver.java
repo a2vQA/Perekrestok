@@ -29,11 +29,11 @@ public class BrowserstackDriver implements WebDriverProvider {
         caps.setCapability("browserstack.key", authConfig.getPassword());
 
         // Set URL of the application under test
-        caps.setCapability("app", browserstackConfig.getBrowserstackUrl());
+        caps.setCapability("app", browserstackConfig.getApp());
 
         // Specify device and os_version for testing
         caps.setCapability("device", browserstackConfig.getDevice());
-        caps.setCapability("os_version", browserstackConfig.getDevice());
+        caps.setCapability("os_version", browserstackConfig.getOsVersion());
 
         // Set other BrowserStack capabilities
         caps.setCapability("project", "Perekrestok diploma project");
