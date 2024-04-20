@@ -2,13 +2,13 @@ package ru.perekrestok.mob.drivers;
 
 
 import com.codeborne.selenide.WebDriverProvider;
-import ru.perekrestok.mob.config.AuthConfig;
-import ru.perekrestok.mob.config.BrowserstackConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import ru.perekrestok.mob.config.AuthConfig;
+import ru.perekrestok.mob.config.BrowserstackConfig;
 
 import javax.annotation.Nonnull;
 import java.net.MalformedURLException;
@@ -34,12 +34,12 @@ public class BrowserstackDriver implements WebDriverProvider {
         // Specify device and os_version for testing
         caps.setCapability("device", browserstackConfig.getDevice());
         caps.setCapability("os_version", browserstackConfig.getOsVersion());
+        caps.setCapability("browserstack.networkLogs", true);
 
         // Set other BrowserStack capabilities
         caps.setCapability("project", "Perekrestok diploma project");
         caps.setCapability("build", "browserstack-build-1");
         caps.setCapability("name", "mob tests");
-
 
         // Initialise the remote Webdriver using BrowserStack remote URL
         // and desired capabilities defined above

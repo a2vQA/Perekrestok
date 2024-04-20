@@ -1,10 +1,12 @@
 package ru.perekrestok.mob.tests;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -14,16 +16,14 @@ import ru.perekrestok.mob.pages.LoginPage;
 import ru.perekrestok.mob.pages.elements.AgeDisclaimerPopup;
 import ru.perekrestok.mob.pages.elements.BrowserLoginPopup;
 import ru.perekrestok.mob.pages.elements.Footer;
-import ru.perekrestok.mob.pages.elements.WelcomeCarousel;
 
 import static io.qameta.allure.Allure.step;
 
 @Epic("Perekrestok mob")
-@Story("Первый запуск")
-@Feature("Прохождение онбординга")
+@Story("Попап подтверждения возраста")
+@Feature("Прохождение попапа подтверждения возраста")
 @Tag("smokeMob")
-public class FirstStartTests extends BaseTest {
-    private final WelcomeCarousel welcomeCarousel = new WelcomeCarousel();
+public class AgeDisclaimerTests extends BaseTest {
     private final BrowserLoginPopup browserLoginPopup = new BrowserLoginPopup();
     private final LoginPage loginPage = new LoginPage();
     private final Footer footer = new Footer();
@@ -31,23 +31,18 @@ public class FirstStartTests extends BaseTest {
     private final AgeDisclaimerPopup ageDisclaimerPopup = new AgeDisclaimerPopup();
     private final AlcoholPage alcoholPage = new AlcoholPage();
 
-    @DisplayName("Успешное отображение 4ех экранов онбординга при первом запуске")
+    @BeforeEach
+    public void arrange() {
+        Selenide.back();
+        browserLoginPopup.waitForBrowserPopup();
+        step("Нажать кнопку Пропустить на экране авторизации", () -> loginPage.getSkipBtn().click());
+    }
+
+    @DisplayName("Подтверждение 18-летия в попапе возрастного ограничение")
     @Owner("vvartemenko")
-    @Tag("onboardingPass")
+    @Tag("mob_ageDisclaimerPositive")
     @Test
-    void checkOnboardingInfoTest() {
-        step("Нажать кнопку Крестик в карусели", () -> {
-            welcomeCarousel.getCloseCarousel().click();
-        });
-
-//        step("Закрыть браузер с авторизацией", () -> {
-//            browserLoginPopup.getCloseBrowserBtn().click();
-//        });
-
-        step("Нажать кнопку Пропустить на экране авторизации", () -> {
-            loginPage.getSkipBtn().click();
-        });
-
+    void checkConfirmAgeDisclaimerTest() {
         step("Нажать кнопку Каталог", () -> {
             footer.getCatalogue().click();
         });

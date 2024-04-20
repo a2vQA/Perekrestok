@@ -20,7 +20,7 @@ import static io.qameta.allure.Allure.step;
 @Story("Попап подтверждения возраста")
 @Feature("Прохождение попапа подтверждения возраста")
 @Tag("smokeWeb")
-public class AgeDisclaimerInSalesTests extends BaseTest {
+public class AgeDisclaimerTests extends BaseTest {
     private final AgeDisclaimerPopup ageDisclaimerPopup = new AgeDisclaimerPopup();
     private final AlcoholPage alcoholPage = new AlcoholPage();
     private final MainPage mainPage = new MainPage();
