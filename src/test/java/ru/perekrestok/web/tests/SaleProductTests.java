@@ -20,7 +20,7 @@ import static io.qameta.allure.Allure.step;
 @Epic("Perekrestok web")
 @Story("Страница Скидки")
 @Feature("Аттрибуты скидки у товара")
-@Tag("smoke")
+@Tag("smokeWeb")
 public class SaleProductTests extends BaseTest {
     private final ProductCard productCard = new ProductCard();
     private final AgeDisclaimerPopup ageDisclaimerPopup = new AgeDisclaimerPopup();

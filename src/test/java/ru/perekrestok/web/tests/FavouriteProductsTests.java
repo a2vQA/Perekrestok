@@ -15,7 +15,7 @@ import static io.qameta.allure.Allure.step;
 @Epic("Perekrestok web")
 @Story("Избранные товары")
 @Feature("Добавление товаров в Избранные товары")
-@Tag("smoke")
+@Tag("smokeWeb")
 public class FavouriteProductsTests extends BaseTest {
 
     @BeforeEach

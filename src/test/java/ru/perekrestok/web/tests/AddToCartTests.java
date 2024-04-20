@@ -23,7 +23,7 @@ import static io.qameta.allure.Allure.step;
 @Epic("Perekrestok web")
 @Story("Корзина")
 @Feature("Добавление товара в корзину")
-@Tag("smoke")
+@Tag("smokeWeb")
 public class AddToCartTests extends BaseTest {
     private final Header header = new Header();
     private final ReceivingMethodPopup receivingMethodPopup = new ReceivingMethodPopup();
