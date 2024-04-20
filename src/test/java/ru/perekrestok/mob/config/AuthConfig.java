@@ -6,9 +6,9 @@ import org.aeonbits.owner.Config;
         "classpath:mob/config/auth.properties"
 })
 public interface AuthConfig extends Config {
-    @Key("user.username")
+    @Config.Key("user.username")
     String getUsername();
 
-    @Key("user.accessKey")
+    @Config.Key("user.accessKey")
     String getPassword();
 }

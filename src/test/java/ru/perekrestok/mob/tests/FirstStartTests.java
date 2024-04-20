@@ -40,9 +40,9 @@ public class FirstStartTests extends BaseTest {
             welcomeCarousel.getCloseCarousel().click();
         });
 
-        step("Закрыть браузер с авторизацией", () -> {
-            browserLoginPopup.getCloseBrowserBtn().click();
-        });
+//        step("Закрыть браузер с авторизацией", () -> {
+//            browserLoginPopup.getCloseBrowserBtn().click();
+//        });
 
         step("Нажать кнопку Пропустить на экране авторизации", () -> {
             loginPage.getSkipBtn().click();

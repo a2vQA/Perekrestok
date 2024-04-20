@@ -6,15 +6,15 @@ import org.aeonbits.owner.Config;
         "classpath:mob/config/${deviceHost}.properties"
 })
 public interface BrowserstackConfig extends Config {
-    @Key("browserstack.device")
+    @Config.Key("browserstack.device")
     String getDevice();
 
-    @Key("browserstack.deviceOsVersion")
+    @Config.Key("browserstack.deviceOsVersion")
     String getOsVersion();
 
-    @Key("browserstack.app")
+    @Config.Key("browserstack.app")
     String getApp();
 
-    @Key("browserstack.remoteUrl")
+    @Config.Key("browserstack.remoteUrl")
     String getBrowserstackUrl();
 }
