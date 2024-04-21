@@ -53,7 +53,7 @@ public class AddToCartTests extends BaseTest {
                     .click();
             receivingMethodPopup
                     .getDisplaySelfPickupStoresAsList()
-                    .click();
+                    .click(ClickOptions.withTimeout(Duration.ofSeconds(20)));
             receivingMethodPopup
                     .getListOfSelfPickupStores()
                     .get(0)
