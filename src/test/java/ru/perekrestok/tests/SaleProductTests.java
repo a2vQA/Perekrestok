@@ -1,4 +1,4 @@
-package ru.perekrestok.web.tests;
+package ru.perekrestok.tests;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Epic;
@@ -9,10 +9,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import ru.perekrestok.web.pages.SalePage;
-import ru.perekrestok.web.pages.elements.AgeDisclaimerPopup;
-import ru.perekrestok.web.pages.elements.ProductCard;
-import ru.perekrestok.web.pages.elements.ProductDetailPage;
+import ru.perekrestok.pages.SalePage;
+import ru.perekrestok.pages.elements.AgeDisclaimerPopup;
+import ru.perekrestok.pages.elements.ProductCard;
+import ru.perekrestok.pages.elements.ProductDetailPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
@@ -48,9 +48,9 @@ public class SaleProductTests extends BaseTest {
     @Test
     public void checkSaleAttributesOnProduct() {
         step("Проверить наличие аттрибутов скидки у первого товара", () -> {
-            step("Наличие бейджа скидки", () -> productCard.checkSaleBadgeOnProductCard(1));
+            step("Наличие бейджа скидки", () -> productCard.checkSaleBadgeOnProductCard(0));
 
-            step("Наличие старой и новой цены", () -> productCard.checkPresenceOfTwoPricesOnProductCard(1));
+            step("Наличие старой и новой цены", () -> productCard.checkPresenceOfTwoPricesOnProductCard(0));
         });
 
         step("Перейти на детальную страницу первого скидочного товара", () -> productCard

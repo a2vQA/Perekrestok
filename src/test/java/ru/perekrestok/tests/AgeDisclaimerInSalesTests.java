@@ -1,4 +1,4 @@
-package ru.perekrestok.web.tests;
+package ru.perekrestok.tests;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Epic;
@@ -9,9 +9,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import ru.perekrestok.web.pages.AlcoholPage;
-import ru.perekrestok.web.pages.MainPage;
-import ru.perekrestok.web.pages.elements.AgeDisclaimerPopup;
+import ru.perekrestok.pages.AlcoholPage;
+import ru.perekrestok.pages.MainPage;
+import ru.perekrestok.pages.elements.AgeDisclaimerPopup;
 
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;

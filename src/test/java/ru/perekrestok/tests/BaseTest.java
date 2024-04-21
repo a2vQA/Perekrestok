@@ -1,10 +1,10 @@
-package ru.perekrestok.web.tests;
+package ru.perekrestok.tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import ru.perekrestok.web.config.DriverConfig;
-import ru.perekrestok.web.helpers.Attach;
+import ru.perekrestok.config.DriverConfig;
+import ru.perekrestok.helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
@@ -23,8 +23,8 @@ public class BaseTest {
         DriverConfig driverConfig = ConfigFactory.create(DriverConfig.class);
 
         Configuration.timeout = 10000;
-        Configuration.baseUrl = "https://perekrestok.ru";
         Configuration.pageLoadStrategy = "eager";
+        Configuration.baseUrl = System.getProperty("baseUrl", driverConfig.baseUrl());
         Configuration.browser = System.getProperty("browser", driverConfig.browserName());
         Configuration.browserVersion = System.getProperty("browserVersion", driverConfig.browserVersion());
         Configuration.browserSize = System.getProperty("browserSize", driverConfig.browserSize());

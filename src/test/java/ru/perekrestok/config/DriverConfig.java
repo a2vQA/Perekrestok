@@ -1,4 +1,4 @@
-package ru.perekrestok.web.config;
+package ru.perekrestok.config;
 
 import org.aeonbits.owner.Config;
 
@@ -20,4 +20,7 @@ public interface DriverConfig extends Config {
 
     @Key("is.remote")
     Boolean isRemote();
+
+    @Key("base.url")
+    String baseUrl();
 }

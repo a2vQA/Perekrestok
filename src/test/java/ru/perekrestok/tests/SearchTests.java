@@ -1,4 +1,4 @@
-package ru.perekrestok.web.tests;
+package ru.perekrestok.tests;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Epic;
@@ -9,9 +9,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import ru.perekrestok.web.pages.MainPage;
-import ru.perekrestok.web.pages.elements.Header;
-import ru.perekrestok.web.pages.elements.ProductCard;
+import ru.perekrestok.pages.MainPage;
+import ru.perekrestok.pages.elements.Header;
+import ru.perekrestok.pages.elements.ProductCard;
 
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;

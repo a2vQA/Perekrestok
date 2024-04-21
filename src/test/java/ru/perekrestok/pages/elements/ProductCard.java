@@ -1,4 +1,4 @@
-package ru.perekrestok.web.pages.elements;
+package ru.perekrestok.pages.elements;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
