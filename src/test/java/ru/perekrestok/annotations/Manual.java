@@ -1,4 +1,4 @@
-package ru.perekrestok.web.annotations;
+package ru.perekrestok.annotations;
 
 import io.qameta.allure.LabelAnnotation;
 

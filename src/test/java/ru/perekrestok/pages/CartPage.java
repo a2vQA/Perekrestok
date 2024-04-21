@@ -1,4 +1,4 @@
-package ru.perekrestok.web.pages;
+package ru.perekrestok.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;

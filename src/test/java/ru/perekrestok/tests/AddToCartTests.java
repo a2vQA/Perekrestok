@@ -1,4 +1,4 @@
-package ru.perekrestok.web.tests;
+package ru.perekrestok.tests;
 
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
@@ -10,12 +10,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import ru.perekrestok.web.pages.CartPage;
-import ru.perekrestok.web.pages.elements.AgeDisclaimerPopup;
-import ru.perekrestok.web.pages.elements.Header;
-import ru.perekrestok.web.pages.elements.ProductCard;
-import ru.perekrestok.web.pages.elements.ProductDetailPage;
-import ru.perekrestok.web.pages.elements.ReceivingMethodPopup;
+import ru.perekrestok.pages.CartPage;
+import ru.perekrestok.pages.elements.AgeDisclaimerPopup;
+import ru.perekrestok.pages.elements.Header;
+import ru.perekrestok.pages.elements.ProductCard;
+import ru.perekrestok.pages.elements.ProductDetailPage;
+import ru.perekrestok.pages.elements.ReceivingMethodPopup;
 
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
@@ -35,7 +35,7 @@ public class AddToCartTests extends BaseTest {
 
     @BeforeEach
     public void arrange() {
-        step("Открыть главную страницу и указать способ получения - Самовывоз и перейти на страницу Скидки", () -> {
+        step("Открыть главную страницу и указать способ получения - Самовывоз и перейти на страницу Вино", () -> {
             open("");
             header
                     .getReceivingMethodBtn()
@@ -63,7 +63,7 @@ public class AddToCartTests extends BaseTest {
                     .getContent()
                     .shouldNotBe(Condition.visible);
 
-            open("/cat/d");
+            open("https://www.perekrestok.ru/cat/c/2/vino");
             ageDisclaimerPopup
                     .getConfirmAgeBtn()
                     .click();

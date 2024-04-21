@@ -1,4 +1,4 @@
-package ru.perekrestok.web.helpers;
+package ru.perekrestok.helpers;
 
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Attachment;

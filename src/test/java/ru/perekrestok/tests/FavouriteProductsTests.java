@@ -1,4 +1,4 @@
-package ru.perekrestok.web.tests;
+package ru.perekrestok.tests;
 
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
@@ -8,7 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import ru.perekrestok.web.annotations.Manual;
+import ru.perekrestok.annotations.Manual;
 
 import static io.qameta.allure.Allure.step;
 
