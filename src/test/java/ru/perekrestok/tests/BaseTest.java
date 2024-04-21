@@ -23,7 +23,7 @@ public class BaseTest {
         DriverConfig driverConfig = ConfigFactory.create(DriverConfig.class);
 
         Configuration.timeout = 10000;
-        Configuration.pageLoadStrategy = "eager";
+//        Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = System.getProperty("baseUrl", driverConfig.baseUrl());
         Configuration.browser = System.getProperty("browser", driverConfig.browserName());
         Configuration.browserVersion = System.getProperty("browserVersion", driverConfig.browserVersion());
