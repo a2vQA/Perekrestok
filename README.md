@@ -44,7 +44,7 @@
 * Видео выполнения автотеста.
 
 <a id="checking"></a>
-## :male_detective:: Реализованные проверки
+## :male_detective: Реализованные проверки
 
 Автоматизированные тесты
 - ✓ Добавление товара в корзину
@@ -79,7 +79,7 @@ gradle clean withTags -Denv=remote -Dbrowser=chrome -DbrowserVersion=122.0 -Dbro
 ## <img width="5%" style="vertical-align:middle" title="Jenkins" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg"> </a> Сборка в <a target="_blank" href="https://jenkins.autotests.cloud/view/C24/job/C24-v_artyomenko-HW17-YouGile/"> Jenkins </a>
 
 Для запуска сборки необходимо перейти в раздел ```Build with Parameters```, выбрать необходимые параметры и нажать кнопку ```Build```.
-#### :hammer_and_wrench:: Параметры сборки в Jenkins:
+#### :hammer_and_wrench: Параметры сборки в Jenkins:
 - BROWSER (браузер: chrome/firefox, по умолчанию firefox)
 - BROWSER_VERSION (версия браузера, по умолчанию 123.0)
 - BROWSER_SIZE (размер окна браузера, по умолчанию 1920x1080)
