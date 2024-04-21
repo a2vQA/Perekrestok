@@ -55,7 +55,7 @@ public class SearchTests extends BaseTest {
             productCard
                     .getProductCardTitles()
                     .get(0)
-                    .shouldBe(Condition.visible, Duration.ofSeconds(20000))
+                    .shouldBe(Condition.visible, Duration.ofSeconds(20))
                     .shouldHave(Condition.text(searchValue));
         });
     }
