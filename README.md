@@ -72,7 +72,7 @@ gradle clean withTags -Dtags=smoke
 ```
 Удаленный запуск всех тестов с параметрами:
 ```
-gradle clean withTags -Denv=remote -Dbrowser=chrome -DbrowserVersion=122.0 -DbrowserSize=1920x1080 -DbrowserRemoteUrl=https://user1:1234@selenoid.autotests.cloud/wd/hub -DbaseUrl=https://perekrestok.ru -Dtags=smoke
+gradle clean withTags -Denv=remote -Dbrowser=chrome -DbrowserVersion=122.0 -DbrowserSize=1920x1080 -DbrowserRemoteUrl=*Remote selenoid or moon hub* -DbaseUrl=https://perekrestok.ru -Dtags=smoke
 ```
 
 <a id="jenkins"></a>
