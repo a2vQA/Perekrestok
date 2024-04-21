@@ -1,5 +1,6 @@
 package ru.perekrestok.tests;
 
+import com.codeborne.selenide.ClickOptions;
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Epic;
@@ -16,6 +17,8 @@ import ru.perekrestok.pages.elements.Header;
 import ru.perekrestok.pages.elements.ProductCard;
 import ru.perekrestok.pages.elements.ProductDetailPage;
 import ru.perekrestok.pages.elements.ReceivingMethodPopup;
+
+import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
@@ -35,7 +38,7 @@ public class AddToCartTests extends BaseTest {
 
     @BeforeEach
     public void arrange() {
-        step("Открыть главную страницу и указать способ получения - Самовывоз и перейти на страницу Вино", () -> {
+        step("Открыть главную страницу, указать способ получения - Самовывоз и перейти на страницу Вино", () -> {
             open("");
             header
                     .getReceivingMethodBtn()
@@ -54,7 +57,7 @@ public class AddToCartTests extends BaseTest {
             receivingMethodPopup
                     .getListOfSelfPickupStores()
                     .get(0)
-                    .click();
+                    .click(ClickOptions.withTimeout(Duration.ofSeconds(20000)));
             receivingMethodPopup
                     .getSubmitStoreBtn()
                     .click();

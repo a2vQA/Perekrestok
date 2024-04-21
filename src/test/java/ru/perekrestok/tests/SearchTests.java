@@ -13,6 +13,8 @@ import ru.perekrestok.pages.MainPage;
 import ru.perekrestok.pages.elements.Header;
 import ru.perekrestok.pages.elements.ProductCard;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 import static java.lang.String.format;
@@ -53,6 +55,7 @@ public class SearchTests extends BaseTest {
             productCard
                     .getProductCardTitles()
                     .get(0)
+                    .shouldBe(Condition.visible, Duration.ofSeconds(20000))
                     .shouldHave(Condition.text(searchValue));
         });
     }
