@@ -5,6 +5,7 @@
 ## :clipboard: Содержание:
 
 - <a href="#tools"> Стек используемых технологий</a>
+- <a href="#checking"> Реализованные проверки</a>
 - <a href="#console"> Запуск автотестов</a>
 - <a href="#jenkins"> Сборка в Jenkins</a>
 - <a href="#allureReport"> Пример Allure-отчета</a>
