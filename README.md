@@ -1,6 +1,6 @@
 # Проект-презентация по автоматизации для сайта "Perekrestok"
 
-<img alt="Picture of site" src="/media/Perekryostok-logo-2014.svg">
+<a href="https://www.perekrestok.ru/"> <img alt="Picture of site" src="/media/Perekryostok-logo-2014.svg">
 
 ## :clipboard: Содержание:
 
