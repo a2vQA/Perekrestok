@@ -122,7 +122,7 @@ gradle clean withTags -Denv=remote -Dbrowser=chrome -DbrowserVersion=122.0 -Dbro
 Реализована интеграция ```Allure TestOps``` с ```Jira```, в тикете отображается, какие тест-кейсы были написаны в рамках задачи и результат их прогона.
 
 <p align="center">
-<img title="Jira Task" src="media/jira.png">
+<img title="Jira Task" src="media/jiraTask.png">
 </p>
 
 И наоборот, у тест кейсов отображается ссылка на тикет в Jira, во вкладке ```Test cases```, в поле ```Issue links```.
