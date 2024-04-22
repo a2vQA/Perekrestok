@@ -77,7 +77,7 @@ gradle clean withTags -Denv=remote -Dbrowser=chrome -DbrowserVersion=122.0 -Dbro
 ```
 
 <a id="jenkins"></a>
-## <img width="5%" style="vertical-align:middle" title="Jenkins" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg"> </a> Сборка в <a target="_blank" href="https://jenkins.autotests.cloud/view/C24/job/C24-v_artyomenko-HW17-YouGile/"> Jenkins </a>
+## <img width="5%" style="vertical-align:middle" title="Jenkins" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg"> </a> Сборка в <a target="_blank" href="https://jenkins.autotests.cloud/view/C24/job/C24-v_artyomenko-Perekrestok-UI-diploma/"> Jenkins </a>
 
 Для запуска сборки необходимо перейти в раздел ```Build with Parameters```, выбрать необходимые параметры и нажать кнопку ```Build```.
 #### :hammer_and_wrench: Параметры сборки в Jenkins:
@@ -94,7 +94,7 @@ gradle clean withTags -Denv=remote -Dbrowser=chrome -DbrowserVersion=122.0 -Dbro
 После выполнения сборки, в блоке ```Build History``` напротив номера сборки появятся значки ```Allure Report``` и ```Allure TestOps```, при клике на которые откроется страница с сформированным html-отчетом и тестовой документацией соответственно.
 
 <a id="allureReport"></a>
-## <img width="5%" style="vertical-align:middle" title="Allure Report" src="https://avatars.githubusercontent.com/u/5879127?s=200&v=4"> </a> Пример <a target="_blank" href="https://jenkins.autotests.cloud/view/C24/job/C24-v_artyomenko-HW17-YouGile/6/allure/"> Allure-отчета </a>
+## <img width="5%" style="vertical-align:middle" title="Allure Report" src="https://avatars.githubusercontent.com/u/5879127?s=200&v=4"> </a> Пример <a target="_blank" href="https://jenkins.autotests.cloud/view/C24/job/C24-v_artyomenko-Perekrestok-UI-diploma/12/allure/"> Allure-отчета </a>
 ### Overview
 
 <p align="center">
@@ -102,7 +102,7 @@ gradle clean withTags -Denv=remote -Dbrowser=chrome -DbrowserVersion=122.0 -Dbro
 </p>
 
 <a id="allureTestOps"></a>
-## <img width="3%" style="vertical-align:middle" title="Allure TestOps" src="https://plugins.jetbrains.com/files/12513/451639/icon/pluginIcon.svg"> </a> Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/4085/dashboards"> Allure TestOps </a>
+## <img width="3%" style="vertical-align:middle" title="Allure TestOps" src="https://plugins.jetbrains.com/files/12513/451639/icon/pluginIcon.svg"> </a> Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/4181/dashboards"> Allure TestOps </a>
 
 На *Dashboard* в ```Allure TestOps``` видна статистика количества тестов: сколько из них добавлены и проходятся вручную, сколько автоматизированы. Новые тесты, а так же результаты прогона приходят по интеграции при каждом запуске сборки.
 
@@ -117,7 +117,7 @@ gradle clean withTags -Denv=remote -Dbrowser=chrome -DbrowserVersion=122.0 -Dbro
 </p>
 
 <a id="jira"></a>
-## <img width="4%" style="vertical-align:middle" title="Jira" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original-wordmark.svg"> </a> Интеграция с <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1131"> Jira </a>
+## <img width="4%" style="vertical-align:middle" title="Jira" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original-wordmark.svg"> </a> Интеграция с <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1195"> Jira </a>
 
 Реализована интеграция ```Allure TestOps``` с ```Jira```, в тикете отображается, какие тест-кейсы были написаны в рамках задачи и результат их прогона.
 
@@ -125,7 +125,7 @@ gradle clean withTags -Denv=remote -Dbrowser=chrome -DbrowserVersion=122.0 -Dbro
 <img title="Jira Task" src="media/jira.png">
 </p>
 
-И наоборот, у тест кейсов отображается ссылка на тикет в Jira, во вкладке ```Test cases```.
+И наоборот, у тест кейсов отображается ссылка на тикет в Jira, во вкладке ```Test cases```, в поле ```Issue links```.
 
 <p align="center">
 <img title="Allure TestOps test case" src="media/allureTestOpsTestCase.png">
