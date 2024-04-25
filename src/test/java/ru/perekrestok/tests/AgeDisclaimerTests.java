@@ -8,10 +8,11 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import ru.perekrestok.pages.AlcoholPage;
 import ru.perekrestok.pages.MainPage;
-import ru.perekrestok.pages.elements.AgeDisclaimerPopup;
+import ru.perekrestok.pages.components.AgeDisclaimerModal;
 
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
@@ -19,9 +20,9 @@ import static io.qameta.allure.Allure.step;
 @Epic("Perekrestok web")
 @Story("Попап подтверждения возраста")
 @Feature("Прохождение попапа подтверждения возраста")
-@Tag("smoke")
-public class AgeDisclaimerInSalesTests extends BaseTest {
-    private final AgeDisclaimerPopup ageDisclaimerPopup = new AgeDisclaimerPopup();
+@Tags({@Tag("smoke"), @Tag("agePopup")})
+public class AgeDisclaimerTests extends BaseTest {
+    private final AgeDisclaimerModal ageDisclaimerModal = new AgeDisclaimerModal();
     private final AlcoholPage alcoholPage = new AlcoholPage();
     private final MainPage mainPage = new MainPage();
 
@@ -36,7 +37,7 @@ public class AgeDisclaimerInSalesTests extends BaseTest {
     @Tag("ageDisclaimerPositive")
     @Test
     public void checkConfirmAgeDisclaimerTest() {
-        step("Подтвердить 18-летие в попапе возрастного ограничения", () -> ageDisclaimerPopup
+        step("Подтвердить 18-летие в попапе возрастного ограничения", () -> ageDisclaimerModal
                 .getConfirmAgeBtn()
                 .click());
 
@@ -53,7 +54,7 @@ public class AgeDisclaimerInSalesTests extends BaseTest {
     @Tag("ageDisclaimerNegative")
     @Test
     public void checkDeclineAgeDisclaimerTest() {
-        step("Нажать кнопку Мне меньше 18 лет", () -> ageDisclaimerPopup
+        step("Нажать кнопку Мне меньше 18 лет", () -> ageDisclaimerModal
                 .getDeclineAgeBtn()
                 .click());
 

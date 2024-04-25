@@ -8,11 +8,12 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
+import ru.perekrestok.pages.ProductDetailPage;
 import ru.perekrestok.pages.SalePage;
-import ru.perekrestok.pages.elements.AgeDisclaimerPopup;
-import ru.perekrestok.pages.elements.ProductCard;
-import ru.perekrestok.pages.elements.ProductDetailPage;
+import ru.perekrestok.pages.components.AgeDisclaimerModal;
+import ru.perekrestok.pages.components.ProductCardComponent;
 
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
@@ -20,10 +21,10 @@ import static io.qameta.allure.Allure.step;
 @Epic("Perekrestok web")
 @Story("Страница Скидки")
 @Feature("Аттрибуты скидки у товара")
-@Tag("smoke")
+@Tags({@Tag("smoke"), @Tag("sale")})
 public class SaleProductTests extends BaseTest {
-    private final ProductCard productCard = new ProductCard();
-    private final AgeDisclaimerPopup ageDisclaimerPopup = new AgeDisclaimerPopup();
+    private final ProductCardComponent productCardComponent = new ProductCardComponent();
+    private final AgeDisclaimerModal ageDisclaimerModal = new AgeDisclaimerModal();
     private final ProductDetailPage productDetailPage = new ProductDetailPage();
     private final SalePage salePage = new SalePage();
 
@@ -31,7 +32,7 @@ public class SaleProductTests extends BaseTest {
     public void arrange() {
         step("Открыть страницу со скидками", () -> {
             open("/cat/d");
-            ageDisclaimerPopup
+            ageDisclaimerModal
                     .getConfirmAgeBtn()
                     .click();
 
@@ -48,12 +49,12 @@ public class SaleProductTests extends BaseTest {
     @Test
     public void checkSaleAttributesOnProduct() {
         step("Проверить наличие аттрибутов скидки у первого товара", () -> {
-            step("Наличие бейджа скидки", () -> productCard.checkSaleBadgeOnProductCard(0));
+            step("Наличие бейджа скидки", () -> productCardComponent.checkSaleBadgeOnProductCard(0));
 
-            step("Наличие старой и новой цены", () -> productCard.checkPresenceOfTwoPricesOnProductCard(0));
+            step("Наличие старой и новой цены", () -> productCardComponent.checkPresenceOfTwoPricesOnProductCard(0));
         });
 
-        step("Перейти на детальную страницу первого скидочного товара", () -> productCard
+        step("Перейти на детальную страницу первого скидочного товара", () -> productCardComponent
                 .getProductCards()
                 .get(0)
                 .click());

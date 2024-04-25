@@ -1,4 +1,4 @@
-package ru.perekrestok.pages.elements;
+package ru.perekrestok.pages.components;
 
 import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
@@ -6,7 +6,7 @@ import lombok.Getter;
 import static com.codeborne.selenide.Selenide.$;
 
 @Getter
-public class AgeDisclaimerPopup {
+public class AgeDisclaimerModal {
     private final SelenideElement content = $("[class$='modal-content'][aria-label='Подтвердите Ваш возраст']")
             .as("Попап Ограничение контента");
     private final SelenideElement confirmAgeBtn = $(".adult-modal-button .button-children")

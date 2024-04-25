@@ -48,14 +48,14 @@
 ## :male_detective: Реализованные проверки
 
 Автоматизированные тесты
-- ✓ Добавление товара в корзину
+- ✓ Добавление товара в корзину (tag - cart)
 - - Добавление товара в корзину из списка товаров
 - - Добавление товара в корзину с детальной страницы
-- ✓ Попап подтверждения возраста
+- ✓ Попап подтверждения возраста (tag - agePopup)
 - - Подтверждение 18-летия в попапе возрастного ограничение
 - - Отклонение 18-летия в попапе возрастного ограничение
-- ✓ Проверка отображения аттрибутов скидки у скидочного товара
-- ✓ [Параметризованный тест] Поиск товара с помощью поисковой строки
+- ✓ Проверка отображения аттрибутов скидки у скидочного товара (tag - sale)
+- ✓ [Параметризованный тест] Поиск товара с помощью поисковой строки (tag - search)
 
 Ручные тесты
 - ✓ Добавление товаров в Избранные товары
@@ -67,13 +67,19 @@
 
 ### Запуск тестов из терминала
 
+В проекте присутствуют отдельные теги для каждого тест-сьюта (описаны выше в реализованных проверках), с помощью которых,
+можно запускать не только все тесты единоразово, но и отдельно только нужные. Применимо и при локальном и удаленном запуске.
+Локальный запуск тестов по сьютам "cart,agePopup" без доп. параметров:
+```
+gradle clean withTags -Dtags=cart,agePopup
+```
 Локальный запуск всех тестов без доп. параметров:
 ```
-gradle clean withTags -Dtags=smoke 
+gradle clean withTags
 ```
 Удаленный запуск всех тестов с параметрами:
 ```
-gradle clean withTags -Denv=remote -Dbrowser=chrome -DbrowserVersion=122.0 -DbrowserSize=1920x1080 -DbrowserRemoteUrl=*Remote selenoid or moon hub* -DbaseUrl=https://perekrestok.ru -Dtags=smoke
+gradle clean withTags -Denv=remote -Dbrowser=chrome -DbrowserVersion=122.0 -DbrowserSize=1920x1080 -DbrowserRemoteUrl=*Remote selenoid or moon hub* -DbaseUrl=https://perekrestok.ru
 ```
 
 <a id="jenkins"></a>
@@ -94,7 +100,7 @@ gradle clean withTags -Denv=remote -Dbrowser=chrome -DbrowserVersion=122.0 -Dbro
 После выполнения сборки, в блоке ```Build History``` напротив номера сборки появятся значки ```Allure Report``` и ```Allure TestOps```, при клике на которые откроется страница с сформированным html-отчетом и тестовой документацией соответственно.
 
 <a id="allureReport"></a>
-## <img width="5%" style="vertical-align:middle" title="Allure Report" src="https://avatars.githubusercontent.com/u/5879127?s=200&v=4"> </a> Пример <a target="_blank" href="https://jenkins.autotests.cloud/view/C24/job/C24-v_artyomenko-Perekrestok-UI-diploma/12/allure/"> Allure-отчета </a>
+## <img width="5%" style="vertical-align:middle" title="Allure Report" src="https://avatars.githubusercontent.com/u/5879127?s=200&v=4"> </a> Пример <a target="_blank" href="https://jenkins.autotests.cloud/view/C24/job/C24-v_artyomenko-Perekrestok-UI-diploma/allure/"> Allure-отчета </a>
 ### Overview
 
 <p align="center">

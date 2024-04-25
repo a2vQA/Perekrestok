@@ -1,4 +1,4 @@
-package ru.perekrestok.pages.elements;
+package ru.perekrestok.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;

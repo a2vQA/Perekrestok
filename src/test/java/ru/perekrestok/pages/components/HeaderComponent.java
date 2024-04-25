@@ -1,4 +1,4 @@
-package ru.perekrestok.pages.elements;
+package ru.perekrestok.pages.components;
 
 import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
@@ -6,7 +6,7 @@ import lombok.Getter;
 import static com.codeborne.selenide.Selenide.$;
 
 @Getter
-public class Header {
+public class HeaderComponent {
     private final SelenideElement catalogSearchInput = $(".header__main-header input")
             .as("Поле ввода Поиск по каталогу");
 

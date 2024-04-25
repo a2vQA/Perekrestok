@@ -7,11 +7,12 @@ import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import ru.perekrestok.pages.MainPage;
-import ru.perekrestok.pages.elements.Header;
-import ru.perekrestok.pages.elements.ProductCard;
+import ru.perekrestok.pages.components.HeaderComponent;
+import ru.perekrestok.pages.components.ProductCardComponent;
 
 import java.time.Duration;
 
@@ -22,11 +23,11 @@ import static java.lang.String.format;
 @Epic("Perekrestok web")
 @Story("Поиск")
 @Feature("Поиск товара")
-@Tag("smoke")
+@Tags({@Tag("smoke"), @Tag("search")})
 public class SearchTests extends BaseTest {
     private final MainPage mainPage = new MainPage();
-    private final Header header = new Header();
-    private final ProductCard productCard = new ProductCard();
+    private final HeaderComponent headerComponent = new HeaderComponent();
+    private final ProductCardComponent productCardComponent = new ProductCardComponent();
 
     @DisplayName("Поиск товара с помощью поисковой строки")
     @Owner("vvartemenko")
@@ -42,17 +43,17 @@ public class SearchTests extends BaseTest {
         });
 
         step(format("Вписать в строку Поиск по каталогу - %s и нажать Enter", searchValue), () -> {
-            header
+            headerComponent
                     .getCatalogSearchInput()
                     .shouldBe(Condition.visible);
-            header
+            headerComponent
                     .getCatalogSearchInput()
                     .setValue(searchValue)
                     .pressEnter();
         });
 
         step(format("Проверить отображение товара %s среди результатов поиска", searchValue), () -> {
-            productCard
+            productCardComponent
                     .getProductCardTitles()
                     .get(0)
                     .shouldBe(Condition.visible, Duration.ofSeconds(20))

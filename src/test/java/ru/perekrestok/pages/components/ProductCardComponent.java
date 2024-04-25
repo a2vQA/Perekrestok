@@ -1,4 +1,4 @@
-package ru.perekrestok.pages.elements;
+package ru.perekrestok.pages.components;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.$$x;
 
 @Getter
-public class ProductCard {
+public class ProductCardComponent {
     private final ElementsCollection productCardTitles = $$(".product-card__title")
             .as("Список названий товаров на странице");
 

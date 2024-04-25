@@ -10,13 +10,14 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import ru.perekrestok.pages.CartPage;
-import ru.perekrestok.pages.elements.AgeDisclaimerPopup;
-import ru.perekrestok.pages.elements.Header;
-import ru.perekrestok.pages.elements.ProductCard;
-import ru.perekrestok.pages.elements.ProductDetailPage;
-import ru.perekrestok.pages.elements.ReceivingMethodPopup;
+import ru.perekrestok.pages.ProductDetailPage;
+import ru.perekrestok.pages.components.AgeDisclaimerModal;
+import ru.perekrestok.pages.components.HeaderComponent;
+import ru.perekrestok.pages.components.ProductCardComponent;
+import ru.perekrestok.pages.components.ReceivingMethodModal;
 
 import java.time.Duration;
 
@@ -26,12 +27,12 @@ import static io.qameta.allure.Allure.step;
 @Epic("Perekrestok web")
 @Story("Корзина")
 @Feature("Добавление товара в корзину")
-@Tag("smoke")
+@Tags({@Tag("smoke"), @Tag("cart")})
 public class AddToCartTests extends BaseTest {
-    private final Header header = new Header();
-    private final ReceivingMethodPopup receivingMethodPopup = new ReceivingMethodPopup();
-    private final AgeDisclaimerPopup ageDisclaimerPopup = new AgeDisclaimerPopup();
-    private final ProductCard productCard = new ProductCard();
+    private final HeaderComponent headerComponent = new HeaderComponent();
+    private final ReceivingMethodModal receivingMethodModal = new ReceivingMethodModal();
+    private final AgeDisclaimerModal ageDisclaimerModal = new AgeDisclaimerModal();
+    private final ProductCardComponent productCardComponent = new ProductCardComponent();
     private final ProductDetailPage productDetailPage = new ProductDetailPage();
     private final CartPage cartPage = new CartPage();
     private String productName;
@@ -40,34 +41,34 @@ public class AddToCartTests extends BaseTest {
     public void arrange() {
         step("Открыть главную страницу, указать способ получения - Самовывоз и перейти на страницу Вино", () -> {
             open("");
-            header
+            headerComponent
                     .getReceivingMethodBtn()
                     .click();
 
-            receivingMethodPopup
+            receivingMethodModal
                     .getContent()
                     .shouldBe(Condition.visible);
 
-            receivingMethodPopup
+            receivingMethodModal
                     .getSelfPickup()
                     .click();
-            receivingMethodPopup
+            receivingMethodModal
                     .getDisplaySelfPickupStoresAsList()
                     .click(ClickOptions.withTimeout(Duration.ofSeconds(20)));
-            receivingMethodPopup
+            receivingMethodModal
                     .getListOfSelfPickupStores()
                     .get(0)
                     .click(ClickOptions.withTimeout(Duration.ofSeconds(20)));
-            receivingMethodPopup
+            receivingMethodModal
                     .getSubmitStoreBtn()
                     .click();
 
-            receivingMethodPopup
+            receivingMethodModal
                     .getContent()
                     .shouldNotBe(Condition.visible);
 
-            open("https://www.perekrestok.ru/cat/c/2/vino");
-            ageDisclaimerPopup
+            open("/cat/c/2/vino");
+            ageDisclaimerModal
                     .getConfirmAgeBtn()
                     .click();
         });
@@ -79,18 +80,18 @@ public class AddToCartTests extends BaseTest {
     @Test
     public void addToCartFromProductListTest() {
         step("Запомнить название первого товара", () -> {
-            productName = productCard
+            productName = productCardComponent
                     .getProductCardTitles()
                     .get(0)
                     .getText();
         });
 
         step("Нажать кнопку Добавить в корзину у первого товара", () -> {
-            productCard.addProductToCart(0);
+            productCardComponent.addProductToCart(0);
         });
 
         step("Перейти в корзину", () -> {
-            header
+            headerComponent
                     .getCartBtn()
                     .click();
         });
@@ -111,7 +112,7 @@ public class AddToCartTests extends BaseTest {
     @Tag("addToCartFromDetailPage")
     @Test
     public void addToCartFromProductDetailPageTest() {
-        step("Перейти на детальную страницу первого товара", () -> productCard
+        step("Перейти на детальную страницу первого товара", () -> productCardComponent
                 .getProductCards()
                 .get(0)
                 .click());
@@ -126,7 +127,7 @@ public class AddToCartTests extends BaseTest {
                 .getAddToCartBtn()
                 .click());
 
-        step("Перейти в корзину", () -> header
+        step("Перейти в корзину", () -> headerComponent
                 .getCartBtn()
                 .click());
 
